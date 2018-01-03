@@ -1,0 +1,30 @@
+<%=form_for @user do |f| %>
+    
+    <% if @user.errors = any? %>
+    
+    <% end %>
+
+    <div class = 'feild'>
+        <%= f.label 'First Name' %>
+        <%= f.text_field :first_name, :required => true %>
+    </div> 
+    
+    <div class = 'feild'>
+        <%= f.label 'Last Name' %>
+        <%= f.text_field :last_name, :required =>true %>
+    </div>
+    
+    <div class = 'feild'>
+        <%= f.label 'Email' %>
+        <%= f.text_field :email, :required =>true %>
+    </div>
+    
+    <div class = 'feild'>
+        <%= f.label 'Password' %>
+        <%= f.text_field :password_digest, :required =>true %>
+    </div>
+    
+    <div class = 'actions'>
+        <%= f.submit :Submit %>
+    </div>
+<%end%>

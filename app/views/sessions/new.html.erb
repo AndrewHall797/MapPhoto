@@ -1,0 +1,16 @@
+<%= form_for :sessions, url: login_path do |f| %>
+
+    <div class = 'feild'>
+        <%= f.label 'Email' %>
+        <%= f.email_feild :email, required = true %>
+    </div>
+    
+    <div class = 'feild'>
+        <%= f.label 'Password' %>
+        <%= f.password_feild :password_feild, required = true %>
+    </div>
+    
+    <div class = 'actions'>
+        <%= f.submit :Submit %>
+    </div>
+<% end %>

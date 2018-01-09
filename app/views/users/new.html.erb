@@ -1,30 +1,12 @@
-<%=form_for @user do |f| %>
-    
-    <% if @user.errors = any? %>
-    
-    <% end %>
-
-    <div class = 'feild'>
-        <%= f.label 'First Name' %>
-        <%= f.text_field :first_name, :required => true %>
-    </div> 
-    
-    <div class = 'feild'>
-        <%= f.label 'Last Name' %>
-        <%= f.text_field :last_name, :required =>true %>
+<div class = 'column'>
+    <div class = 'row' style = 'text-align: centre'>
+        <div class = 'col-md-4 offset-md-4' >
+            <h>Log in</h>
+            <%= link_to 'Login', login_path  %>
+        </div>
+        <div class = 'col-md-4'>
+            <h>Sign up</h>
+            <%= render 'form' %>
+        </div>
     </div>
-    
-    <div class = 'feild'>
-        <%= f.label 'Email' %>
-        <%= f.email_field :email, :required =>true %>
-    </div>
-    
-    <div class = 'feild'>
-        <%= f.label 'Password' %>
-        <%= f.password_field :password, :required =>true %>
-    </div>
-    
-    <div class = 'actions'>
-        <%= f.submit :Submit %>
-    </div>
-<%end%>
+</div>

@@ -4,5 +4,4 @@ class User < ActiveRecord::Base
     
     #Checks to see if the email is unique
     validates_uniqueness_of :email
-    
 end

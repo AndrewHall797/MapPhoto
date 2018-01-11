@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   
-  get '/mainpage' => 'users#main_page' 
+  get 'locations/new'
+
+  get 'locations/create'
+
+  get 'locations/index'
+
+  get 'locations/delete'
+
+  get '/mainpage' => 'locations#new' 
   
   get '/login' => 'sessions#new' 
 
@@ -8,11 +16,12 @@ Rails.application.routes.draw do
 
   get '/logout' => 'sessions#destroy'
   
-  get 'signup' => 'user#new'
+  get '/signup' => 'users#new'
 
   root 'users#new'
 
   resources :users
   resources :sessions
+  resources :locations
   
 end

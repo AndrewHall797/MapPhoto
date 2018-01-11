@@ -1,0 +1,21 @@
+<%=form_for @location do |f| %>
+    
+    <div class = 'field'>
+        <%= f.label 'Title' %>
+        <%= f.text_field :title, :required => true %>
+    </div>
+    
+    <div class = 'field'>
+        <%= f.label 'image' %>
+        <%= f.file_field :image, :required => true %>
+    </div>
+    
+    <div class = 'field'>
+        <%= f.label 'Description'  %>
+        <%= f.text_field :description, :required => true %>
+    </div>
+    
+    <div class = 'actions'>
+        <%= f.submit :Submit %>
+    </div>
+<%end%>

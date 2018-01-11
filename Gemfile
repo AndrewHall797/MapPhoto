@@ -30,6 +30,9 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Paperclip used for image upload and storage
+gem "paperclip", "~> 5.0.0"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

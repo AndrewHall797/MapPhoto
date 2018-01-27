@@ -1,31 +1,38 @@
-<%=form_for @user do |f| %>
-    
-    <div class = 'field'>
-        <%= f.label 'First Name' %>
-        <%= f.text_field :first_name, :required => true %>
-    </div> 
-    
-    <div class = 'field'>
-        <%= f.label 'Last Name' %>
-        <%= f.text_field :last_name, :required =>true %>
-    </div>
-    
-    <div class = 'field'>
-        <%= f.label 'Email' %>
-        <%= f.email_field :email, :required =>true %>
-    </div>
-    
-    <div class = 'field'>
-        <%= f.label 'Password' %>
-        <%= f.password_field :password, :required =>true %>
-    </div>
-    
-    <div class = 'field'>
-        <%= f.label 'Password Confirmation' %>
-        <%= f.password_field :password_confirmation, :required =>true %>
-    </div>
-    
-    <div class = 'actions'>
-        <%= f.submit :Submit %>
-    </div>
-<%end%>
+<div class = 'form'>
+    <%=form_for @user do |f| %>
+        
+        <div class = 'field'>
+            <%= f.label 'First Name' %>
+            <%= f.text_field :first_name,class: 'text-input', :required => true %>
+        </div> 
+        
+        <div class = 'field'>
+            <%= f.label 'Last Name' %>
+            <%= f.text_field :last_name,class: 'text-input', :required =>true %>
+        </div>
+        
+        <div class = 'field'>
+            <%= f.label 'Email' %>
+            <%= f.email_field :email,class: 'text-input', :required =>true %>
+        </div>
+        
+        <div class = 'field'>
+            <%= f.label 'Password' %>
+            <%= f.password_field :password,class: 'text-input', :required =>true %>
+        </div>
+        
+        <div class = 'field'>
+            <%= f.label 'Password Confirmation' %>
+            <%= f.password_field :password_confirmation,class: 'text-input', :required =>true %>
+        </div>
+        
+        <div class = 'field'>
+            <%= f.label 'User Profile Picture' %>
+            <%= f.file_field :profile_pic, :required => true %>
+        </div>
+        
+        <div class = 'actions'>
+            <%= f.submit :Submit, class:'button' %>
+        </div>
+    <%end%>
+</div>

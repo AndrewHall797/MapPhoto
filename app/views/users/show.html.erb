@@ -1,18 +1,21 @@
-<div class = 'row'>
+<div class = 'row row1'>
     <div class = 'col-md-4'>
         <h1> <%= @user.first_name %> <%= @user.last_name %></h1>
     </div>
-    <div class = 'col-md-4 offset-md-4'>
+    <div class = 'col-md-7 offset-md-5'>
         <h2>Your Images</h2>
-        <table>
+        <table class = 'image-table'>
             <tr>
                 <td>Image</td>
                 <td>Description</td>
             </tr>
-            <% for picture in @user_pictures %>
+            <% for id in @user_pictures %>
                 <tr>
                     <td>
-                        <%= image_tag picture.url(:thumb) %>
+                        <%= image_tag Location.find(id).image(:thumb) %>
+                    </td>
+                    <td>
+                        <%= "#{Location.find(id).title}" %><br><br><%="#{Location.find(id).description}" %>
                     </td>
                 </tr>
             <% end %>
@@ -22,7 +25,7 @@
 
 <div class = 'row row1'>
     <div class = 'col-md-4'>
-        <%= image_tag @user.profile_pic(:thumb) %>
+        <%= image_tag @user.profile_pic.url(:profile) %>
     </div>
 </div>
 

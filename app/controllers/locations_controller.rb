@@ -10,7 +10,7 @@ class LocationsController < ApplicationController
     if @location.save
       redirect_to '/mainpage'
     else
-      redirect_to '/signip'
+      redirect_to '/mainpage'
     end
   end
 
@@ -19,6 +19,7 @@ class LocationsController < ApplicationController
   end
 
   def delete
-    
+    @location = Location.find(params[:id])
+    @locations.destroy
   end
 end

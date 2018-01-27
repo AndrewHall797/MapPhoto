@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     
     #Makes sure that the user information entered in the new view fits in the model and if so adds the new data to the model
     def create
-        @user = User.new(params.require(:user).permit(:first_name,:last_name,:email,:password,:password_confirmation))
+        @user = User.new(params.require(:user).permit(:first_name,:last_name,:email,:password,:password_confirmation,:profile_pic))
         if @user.save
             redirect_to '/mainpage'
         else
@@ -25,6 +25,8 @@ class UsersController < ApplicationController
     end
     
     def show
-        @user = User.find(params([:id]))
+        @user = User.find(session[:user_id])
+        @user_pictures = Location.user_images(session[:user_id])
     end
+    
 end

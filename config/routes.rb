@@ -1,24 +1,18 @@
 Rails.application.routes.draw do
+
+  get '/mainpage', to: 'locations#new' 
   
-  get 'locations/new'
+  get '/login', to: 'sessions#new' 
 
-  get 'locations/create'
+  post '/login', to: 'sessions#create'
 
-  get 'locations/index'
-
-  get 'locations/delete'
-
-  get '/mainpage' => 'locations#new' 
+  get '/logout', to: 'sessions#destroy'
   
-  get '/login' => 'sessions#new' 
-
-  post '/login' => 'sessions#create'
-
-  get '/logout' => 'sessions#destroy'
+  get '/signup', to: 'users#new'
   
-  get '/signup' => 'users#new'
+  get '/profile', to: 'users#show'
 
-  root 'users#new'
+  root 'sessions#new'
 
   resources :users
   resources :sessions

@@ -1,0 +1,46 @@
+<div class = 'row'>
+    <div class = 'col-md-4'>
+        <h1> <%= @user.first_name %> <%= @user.last_name %></h1>
+    </div>
+    <div class = 'col-md-4 offset-md-4'>
+        <h2>Your Images</h2>
+        <table>
+            <tr>
+                <td>Image</td>
+                <td>Description</td>
+            </tr>
+            <% for picture in @user_pictures %>
+                <tr>
+                    <td>
+                        <%= image_tag picture.url(:thumb) %>
+                    </td>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+</div>
+
+<div class = 'row row1'>
+    <div class = 'col-md-4'>
+        <%= image_tag @user.profile_pic(:thumb) %>
+    </div>
+</div>
+
+<div class = 'row row1'>
+    <div class = 'col-md-4 image'>
+        <table>
+        <tr>
+            <th> First Name </th>
+            <td> <%= @user.first_name %></td>
+        </tr>
+        <tr>
+            <th> Last Name </th>
+            <td> <%= @user.last_name %> </td>
+        </tr>
+        <tr>
+            <th> Email </th>
+            <td> <%= @user.email %></td>
+        </tr>
+    </table>
+    </div>
+</div>

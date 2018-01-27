@@ -1,5 +1,6 @@
 class Location < ActiveRecord::Base
-    has_attached_file :image
+    has_attached_file :image,
+        :styles => { :thumb => ['100x100#'] }
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
     
     # Finds the images that have been uploaded by the user and returns the images in the form of a list.
@@ -9,7 +10,7 @@ class Location < ActiveRecord::Base
        
        for location in @locations
             if location.user_id.to_i == id.to_i
-                user_pictures.push(location.image)
+                user_pictures.push(location.id)
             end
        end
        

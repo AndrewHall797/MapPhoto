@@ -7,7 +7,10 @@ class User < ActiveRecord::Base
     
     #adds the ability for the user model to store profile picture image
     has_attached_file :profile_pic,
-        :styles => { :thumb => ['100x100#'] }
+        :styles => { 
+            :thumb => ['100x100#'], 
+            :profile => ['300x300#']
+        }
     validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\z/
 
 end
